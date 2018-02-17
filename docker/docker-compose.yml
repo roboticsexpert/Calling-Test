@@ -1,0 +1,9 @@
+version: '3.3'
+
+services:
+  nginx:
+    image: nginx:alpine
+    volumes:
+      - ${PWD}/${APPLICATION}:${APPLICATION_MOUNT}
+      - ${PWD}/${NGINX_HOST_LOG_PATH}:/var/log/nginx
+      - ${PWD}/${NGINX_SITES_PATH}:/etc/nginx/sites-available
